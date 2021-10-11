@@ -2,10 +2,12 @@
 
 one:
   title: MyString
+  level: 1
   category: one
-  user: one
+  author: one
 
 two:
   title: MyString
+  level: 1
   category: two
-  user: two
+  author: two
