@@ -1,6 +1,0 @@
-      invoke  active_record
-      create    db/migrate/20211011184208_create_users.rb
-      create    app/models/user.rb
-      invoke    test_unit
-      create      test/models/user_test.rb
-      create      test/fixtures/users.yml
