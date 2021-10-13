@@ -11,14 +11,13 @@
 USERS = %w[User1 User2 User3].freeze
 CATEGORIES = %w[Category1 Category2 Category3].freeze
 TESTS = 10
-TEST_QUESTIONS = 3
 
 users = USERS.reduce([]) do |res, name|
-  res << User.create(name: name)
+  res << User.create!(name: name)
 end
 
 categories = CATEGORIES.reduce([]) do |res, title|
-  res << Category.create(title: title)
+  res << Category.create!(title: title)
 end
 
 tests = (1..TESTS).reduce([]) do |res, i|
@@ -26,12 +25,14 @@ tests = (1..TESTS).reduce([]) do |res, i|
   level = [0, 1, 2, 3].sample
   category_id = categories.sample.id
   author_id = users.sample.id
-  res << Test.create(title: title, level: level, category_id: category_id, author_id: author_id)
+  res << Test.create!(title: title, level: level, category_id: category_id, author_id: author_id)
 end
 
 tests.each do |test|
-  (1..TEST_QUESTIONS).each_with_index do |_, index|
-    question = Question.create(body: "#{test.title} question #{index + 1}", test_id: test.id)
-    Answer.create(body: "Answer for #{question.body}", correct: [false, true].sample, question_id: question.id)
-  end
+  questions = Question.create![
+    {body: 'Question 1', test_id: test.id},
+    {body: 'Question 2', test_id: test.id}
+  ]
+  Answer.create!(body: "Answer 1", correct: [false, true].sample, question_id: questions.first.id)
+  Answer.create!(body: "Answer 2", correct: [false, true].sample, question_id: questions.last.id)
 end
