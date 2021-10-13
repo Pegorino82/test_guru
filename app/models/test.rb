@@ -2,7 +2,8 @@
 
 class Test < ApplicationRecord
   def self.by_category(title)
-    category = Category.where(title: title).first
-    where(category_id: category.id).order(title: :DESC).all
+    joins('JOIN categories ON tests.category_id = categories.id')
+      .where(categories: { title: title })
+      .order(title: :DESC).all
   end
 end
