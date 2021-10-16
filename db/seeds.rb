@@ -21,22 +21,22 @@ categories = Category.create!([
                               ])
 
 tests = Test.create!([
-                       { title: 'Test 1', level: 0, category_id: categories.first.id, author_id: users.first.id },
-                       { title: 'Test 2', level: 1, category_id: categories[1].id, author_id: users[1].id },
-                       { title: 'Test 3', level: 2, category_id: categories.last.id, author_id: users.last.id },
-                       { title: 'Test 4', level: 0, category_id: categories.first.id, author_id: users.first.id },
-                       { title: 'Test 5', level: 1, category_id: categories[1].id, author_id: users[1].id },
-                       { title: 'Test 6', level: 2, category_id: categories.last.id, author_id: users.last.id },
-                       { title: 'Test 7', level: 0, category_id: categories.first.id, author_id: users.first.id },
-                       { title: 'Test 8', level: 1, category_id: categories[1].id, author_id: users[1].id },
-                       { title: 'Test 9', level: 2, category_id: categories.last.id, author_id: users.last.id }
+                       { title: 'Test 1', level: 0, category: categories.first, author: users.first },
+                       { title: 'Test 2', level: 1, category: categories[1], author: users[1] },
+                       { title: 'Test 3', level: 2, category: categories.last, author: users.last },
+                       { title: 'Test 4', level: 0, category: categories.first, author: users.first },
+                       { title: 'Test 5', level: 1, category: categories[1], author: users[1] },
+                       { title: 'Test 6', level: 2, category: categories.last, author: users.last },
+                       { title: 'Test 7', level: 0, category: categories.first, author: users.first },
+                       { title: 'Test 8', level: 1, category: categories[1], author: users[1] },
+                       { title: 'Test 9', level: 2, category: categories.last, author: users.last }
                      ])
 
 tests.each do |test|
   questions = Question.create!([
-                                 { body: 'Question 1', test_id: test.id },
-                                 { body: 'Question 2', test_id: test.id }
+                                 { body: 'Question 1', test: test },
+                                 { body: 'Question 2', test: test }
                                ])
-  Answer.create!(body: 'Answer 1', correct: [false, true].sample, question_id: questions.first.id)
-  Answer.create!(body: 'Answer 2', correct: [false, true].sample, question_id: questions.last.id)
+  Answer.create!(body: 'Answer 1', correct: [false, true].sample, question: questions.first)
+  Answer.create!(body: 'Answer 2', correct: [false, true].sample, question: questions.last)
 end
