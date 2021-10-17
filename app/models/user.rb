@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :author, class_name: "Test", foreign_key: "author_id"
+  has_many :authorship, class_name: "Test", foreign_key: "author_id"
   has_many :tests_users
   has_many :tests, through: :tests_users
 
