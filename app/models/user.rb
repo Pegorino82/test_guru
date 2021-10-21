@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :authorship, class_name: "Test", foreign_key: "author_id", dependent: :destroy
+  has_many :results, dependent: :destroy
+  has_many :tests, through: :results
+
   def tests_by_level(level)
-    Result.joins('JOIN tests ON results.test_id = tests.id')
-          .select('tests.title as title')
-          .where(user_id: id, tests: { level: level })
-          .order(title: :DESC)
-          .pluck(:title)
+    tests.where(level: level)
   end
 end
