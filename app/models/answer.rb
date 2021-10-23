@@ -11,6 +11,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_answers_amount
-    errors.add(:answers_amount) unless (1..3).include?(question.answers.count)
+    errors.add(:answers_amount, 'Answers limit reached.') unless question.answers.count < 4
   end
 end
