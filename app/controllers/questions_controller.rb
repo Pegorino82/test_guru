@@ -17,9 +17,12 @@ class QuestionsController < ApplicationController
   def new; end
 
   def create
-    @test.questions.create!(question_params)
-
-    redirect_to test_questions_url(@test.id)
+    @question = @test.questions.build(question_params)
+    if @question.save
+      redirect_to @question
+    else
+      render :new
+    end
   end
 
   def destroy
