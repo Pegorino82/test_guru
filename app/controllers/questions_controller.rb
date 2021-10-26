@@ -7,22 +7,11 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    respond_to do |format|
-      format.text { render plain: 'All tests' }
-      format.html do
-        render inline: '<div>Test "<%= @test.title %>" questions:</div>
-                                    <% @test.questions.each do |question| %>
-                                      <div><%= "#{question.id}: #{question.body}" %></div>
-                                    <% end %>'
-      end
-    end
+    render json: @test.questions
   end
 
   def show
-    respond_to do |format|
-      format.text { render plain: @question.body }
-      format.html { render inline: '<div><%= @question.body %></div>' }
-    end
+    render json: @question
   end
 
   def new; end
