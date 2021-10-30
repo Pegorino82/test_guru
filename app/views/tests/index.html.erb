@@ -3,11 +3,13 @@
 <p><%= link_to 'Create', new_test_path %></p>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Questions</th>
-  </tr>
+  <thead style="text-align: center;">
+    <tr>
+      <td>Title</td>
+      <td>Level</td>
+      <td>Questions</td>
+    </tr>
+  </thead>
 
   <%= render @tests %>
 </table>
