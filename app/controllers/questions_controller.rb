@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   def show; end
 
   def new
-    @question = Question.new(test: @test)
+    @question = @test.questions.build(question_params)
   end
 
   def edit; end
@@ -34,7 +34,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy!
 
-    redirect_to test_url(@question.test_id)
+    redirect_to @question.test
   end
 
   private
