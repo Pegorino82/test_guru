@@ -2,7 +2,7 @@
 
 module ResultsHelper
   def html_class
-    @result.passed? ? 'color:green' : 'color:red'
+    @result.passed? ? 'success' : 'failed'
   end
 
   def message
