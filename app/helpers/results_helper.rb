@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ResultsHelper
   def html_class
     @result.passed? ? 'color:green' : 'color:red'
