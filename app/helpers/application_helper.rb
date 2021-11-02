@@ -8,4 +8,8 @@ module ApplicationHelper
   def github_url(author, repo)
     link_to 'github', "https://github.com/#{author}/#{repo}", target: '_blank'
   end
+
+  def nav_tests
+    link_to 'To tests', tests_path
+  end
 end

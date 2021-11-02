@@ -1,0 +1,18 @@
+<h3>Pass the "<%= @result.test.title %>" test</h3>
+
+<%= current_question %>
+
+<p>
+  <%= @result.current_question.body %>
+</p>
+
+<%= form_with url: result_path(@result), method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |answer| %>
+    <p>
+      <%= answer.check_box id: "answer_ids_#{answer.object.id}" %>
+      <%= answer.label %>
+    </p>
+  <% end %>
+
+  <p><%= form.submit 'Next' %></p>
+<% end %>
