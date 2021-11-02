@@ -21,7 +21,7 @@ class Result < ApplicationRecord
   end
 
   def success_percentage
-    (self.score * 100.0 / self.test.questions.count).round(1)
+    (score * 100.0 / test.questions.count).round(1)
   end
 
   def passed?
@@ -39,7 +39,8 @@ class Result < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    (correct_answers.ids.sort == answer_ids.map(&:to_i).sort) if answer_ids
+    answer_ids = [] if answer_ids.nil?
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
   def correct_answers
