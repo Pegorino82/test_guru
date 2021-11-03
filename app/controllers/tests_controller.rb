@@ -2,7 +2,6 @@
 
 class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy start]
-  before_action :find_user, only: :start
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -42,6 +41,7 @@ class TestsController < ApplicationController
   end
 
   def start
+    @user = find_user
     @user.tests.push(@test)
 
     redirect_to @user.result(@test)
