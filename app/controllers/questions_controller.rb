@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   def show; end
 
   def new
-    @question = @test.questions.build(question_params)
+    @question = @test.questions.new
   end
 
   def edit; end

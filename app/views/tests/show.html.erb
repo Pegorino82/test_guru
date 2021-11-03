@@ -3,6 +3,8 @@
   <%= @test.title %>
 </p>
 
+<%= button_to 'Start', start_test_path(@test) %>
+
 <p>
   <strong>Level</strong>
   <%= @test.level %>
@@ -18,3 +20,4 @@
 <%= link_to 'Edit', edit_test_path(@test) %> |
 <%= link_to 'Delete', test_path(@test), method: :delete, data: {confirm: 'Delete?'} %> |
 <%= link_to 'Add question', new_test_question_path(@test) %>
+
