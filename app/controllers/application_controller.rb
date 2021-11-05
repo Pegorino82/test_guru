@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
+      cookies[:unauthenticated_url] = request.path
       redirect_to log_in_path, alert: 'You need to verify your email and password'
     end
   end
