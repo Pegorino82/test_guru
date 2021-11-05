@@ -1,5 +1,5 @@
 <%= form_with url: sessions_path do |form| %>
-  <%#= render 'shared/errors', resource: @user %>
+  <%= flash_alert %>
 
   <p>
     <%= form.label :email %>
