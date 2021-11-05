@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  helper_method :current_user
+  helper_method :current_user, :logged_in?
   before_action :authenticate_user!
 
   private
 
   def authenticate_user!
     unless current_user
-      redirect_to log_in_path
+      redirect_to log_in_path, alert: 'You need to verify your email and password'
     end
   end
 
