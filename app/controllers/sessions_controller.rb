@@ -10,9 +10,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      unauthenticated_url = cookies[:unauthenticated_url]
-      cookies.delete(:unauthenticated_url)
-      redirect_to unauthenticated_url || tests_path
+      redirect_to cookies.delete(:unauthenticated_url) || tests_path
     else
       flash.now[:alert] = 'You need to verify your email and password'
       render :new

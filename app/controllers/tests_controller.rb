@@ -41,20 +41,15 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user = find_user
-    @user.tests.push(@test)
+    current_user.tests.push(@test)
 
-    redirect_to @user.result(@test)
+    redirect_to current_user.result(@test)
   end
 
   private
 
   def find_test
     @test = Test.find(params[:id])
-  end
-
-  def find_user
-    @user = current_user
   end
 
   def test_params
