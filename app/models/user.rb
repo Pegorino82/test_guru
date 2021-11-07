@@ -5,7 +5,8 @@ class User < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :tests, through: :results
 
-  validates :name, :email, presence: true
+  validates :name, presence: true
+  validates :email, presence: true, format: { with: /\A(.+)@(.+)\.(.+)\z/ }
 
   has_secure_password
 
