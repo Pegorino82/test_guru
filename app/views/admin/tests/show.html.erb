@@ -11,11 +11,11 @@
 <p>Questions</p>
 
 <ul>
-  <%= render partial: 'questions/question', collection: @test.questions %>
+  <%= render partial: 'admin/questions/question', collection: @test.questions %>
 </ul>
 
 <%= link_to 'Back', admin_tests_path %> |
 <%= link_to 'Edit', edit_admin_test_path(@test) %> |
 <%= link_to 'Delete', admin_test_path(@test), method: :delete, data: {confirm: 'Delete?'} %> |
-<%= link_to 'Add question', new_test_question_path(@test) %>
+<%= link_to 'Add question', new_admin_test_question_path(@test) %>
 

@@ -24,4 +24,8 @@ class User < ApplicationRecord
   def result(test)
     results.order(id: :desc).find_by(test_id: test.id)
   end
+
+  def is_admin?
+    role == 1
+  end
 end

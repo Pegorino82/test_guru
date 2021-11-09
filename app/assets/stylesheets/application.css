@@ -16,6 +16,9 @@
 .header {
     text-align: right;
 }
+.admin-nav {
+    color: cornflowerblue;
+}
 .success {
     color: green;
 }

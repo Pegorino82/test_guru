@@ -1,0 +1,5 @@
+<p class="admin-nav header">
+  Admin |
+  Welcome<%= ", #{current_user.name.capitalize}" %>!
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+</p>
