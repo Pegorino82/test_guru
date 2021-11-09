@@ -8,14 +8,7 @@ Rails.application.routes.draw do
                registrations: 'registrations'
              }
 
-  # get :sign_up, to: 'users#new'
-  # get :log_in, to: 'sessions#new'
-  # delete :log_out, to: 'sessions#destroy'
-  #
-  # resources :users, only: :create
-  # resources :sessions, only: :create
-
-  resources :tests do
+  resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index
     end
@@ -29,5 +22,9 @@ Rails.application.routes.draw do
     member do
       get :result
     end
+  end
+
+  namespace :admin do
+    resources :tests
   end
 end
