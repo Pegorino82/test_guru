@@ -19,8 +19,7 @@ module Admin
     def edit; end
 
     def create
-      @test = Test.new(test_params)
-      @test.author_id = current_user.id
+      @test = current_user.authorship.build(test_params)
       if @test.save
         redirect_to admin_test_path(@test)
       else
@@ -40,12 +39,6 @@ module Admin
       @test.destroy!
 
       redirect_to admin_tests_url
-    end
-
-    def start
-      current_user.tests.push(@test)
-
-      redirect_to current_user.result(@test)
     end
 
     private
