@@ -10,7 +10,7 @@ module Admin
     private
 
     def admin_required!
-      redirect_to root_path, alert: 'Admin required!' unless current_user.is_admin?
+      redirect_to root_path, alert: 'Admin required!' unless current_user.admin?
     end
   end
 end

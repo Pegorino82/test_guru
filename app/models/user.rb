@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  enum role: %i[user admin], _default: 'user'
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,
@@ -23,9 +24,5 @@ class User < ApplicationRecord
 
   def result(test)
     results.order(id: :desc).find_by(test_id: test.id)
-  end
-
-  def is_admin?
-    role == 1
   end
 end
