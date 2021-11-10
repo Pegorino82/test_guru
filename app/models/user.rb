@@ -15,7 +15,7 @@ class User < ApplicationRecord
   has_many :tests, through: :results
 
   validates :name, presence: true
-  validates :email, presence: true, format: { with: /\A(.+)@(.+)\.(.+)\z/ }
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def tests_by_level(level)
     tests.where(level: level)
