@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   devise_for :users,
              path_names: { sign_in: :log_in, sign_out: :sign_out },
              :controllers => {
-               registrations: 'registrations'
+               registrations: 'registrations',
+               sessions: 'sessions'
              }
 
   resources :tests, only: :index do
