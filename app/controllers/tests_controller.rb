@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show edit update destroy start]
+  before_action :authenticate_user!
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -9,52 +9,14 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def show; end
-
-  def new
-    @test = Test.new
-  end
-
-  def edit; end
-
-  def create
-    @test = Test.new(test_params)
-    if @test.save
-      redirect_to @test
-    else
-      render :new
-    end
-  end
-
-  def update
-    if @test.update(test_params)
-      redirect_to @test
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @test.destroy!
-
-    redirect_to tests_url
-  end
-
   def start
+    @test = Test.find(params[:id])
     current_user.tests.push(@test)
 
     redirect_to current_user.result(@test)
   end
 
   private
-
-  def find_test
-    @test = Test.find(params[:id])
-  end
-
-  def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
-  end
 
   def rescue_with_test_not_found
     render plain: 'Not found'

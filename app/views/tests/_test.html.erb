@@ -1,10 +1,10 @@
 <tbody>
-  <tr>
-    <td><%= link_to test.title, test_path(test) %></td>
-    <td><%= test_level(test) %></td>
-    <td><% test.questions.map do |question| %>
-        <%= link_to question.body, question_path(question) %> |
-      <% end %>
-    </td>
-  </tr>
+  <% unless test.questions.size.zero? %>
+    <tr>
+      <td><%= test.title %></td>
+      <td><%= test_level(test) %></td>
+      <td><%= test.questions.count %></td>
+      <td><%= button_to 'Start', start_test_path(test) %></td>
+    </tr>
+  <% end %>
 </tbody>
