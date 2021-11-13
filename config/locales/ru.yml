@@ -1,0 +1,106 @@
+ru:
+  common:
+    back: 'Назад'
+    edit: 'Изменить'
+    delete: 'Удалить'
+    tests: 'К тестам'
+
+  header-nav:
+    creeting: 'Привет%{name}!'
+    login: 'Войти'
+    logup: 'Зарегистрироваться'
+    logout: 'Выйти'
+
+  helpers:
+    submit:
+      test:
+        create: 'Создать'
+        update: 'Обновить'
+      question:
+        create: 'Создать'
+        update: 'Обновить'
+      answer:
+        create: 'Создать'
+        update: 'Обновить'
+    label:
+      test:
+        title: 'Название'
+        level: 'Уровень'
+        category_id: 'Категория'
+
+  shared:
+    errors:
+      header:
+        one: 'Обнаружена %{count} ошибка'
+        other: 'Обнаружено %{count} ошибки'
+        few: 'Обнаружено %{count} ошибки'
+        many: 'Обнаружено %{count} ошибок'
+
+  tests:
+    index:
+      header: 'Тесты'
+      title: 'Название'
+      level: 'Уровень'
+      questions: 'Вопросы'
+    test:
+      start: 'Начать'
+
+  results:
+    show:
+      header: 'Пройдите тест "%{title}"'
+      current_question: 'Вопрос %{num} из %{count}'
+      next: 'Далее'
+    result:
+      header: 'Тест %{title} завершен!'
+      success: 'Вы прошли тест'
+      failed: 'Тест не пройден'
+      percentage: 'Процент успеха %{percentage}%'
+
+  admin:
+    admin-nav:
+      creeting: 'Админка | Привет %{name}!'
+      logout: 'Выйти'
+    tests:
+      new:
+        header: 'Создать тест'
+      create:
+        success: 'Тест создан'
+      edit:
+        header: 'Редактировать %{title} тест'
+      show:
+        header: 'Тест'
+        level: 'Уровень'
+        questions: 'Вопросы'
+        add: 'Добавить вопрос'
+      index:
+        header: 'Тесты'
+        create: 'Создать'
+        title: 'Название'
+        level: 'Уровень'
+        questions: 'Вопросы'
+    questions:
+      new:
+        header: 'Создать %{title} вопрос'
+      create:
+        success: 'Вопрос создан'
+      edit:
+        header: 'Редактировать %{title} вопрос'
+      show:
+        header: 'Вопрос %{body}'
+        category: 'Категория %{title}'
+        test: 'Тест %{title}'
+        level: 'Уровень %{level}'
+        answers: 'Ответы'
+        add: 'Добавить ответ'
+    answers:
+      new:
+        header: 'Создать %{title} ответ'
+      create:
+        success: 'Ответ создан'
+      edit:
+        header: 'Редактировать %{title} ответ'
+      show:
+        header: 'Ответ %{body}'
+        answer: 'Ответ'
+        body: 'Текст: %{body}'
+        correct: 'Верно: %{correct}'

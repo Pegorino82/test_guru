@@ -10,6 +10,6 @@ module ApplicationHelper
   end
 
   def nav_tests
-    link_to 'To tests', tests_path
+    link_to t('common.tests'), tests_path
   end
 end

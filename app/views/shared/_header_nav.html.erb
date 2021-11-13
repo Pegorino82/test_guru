@@ -1,10 +1,10 @@
 <p class="header">
-  Welcome<%= ", #{current_user.name.capitalize}" if user_signed_in? %>!
+  <%= t('header-nav.creeting', name: user_signed_in? ? ", #{current_user.name.capitalize}" : '') %>
   <% if user_signed_in? %>
-    <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+    <%= link_to t('header-nav.logout'), destroy_user_session_path, method: :delete %>
   <% else %>
-    <%= link_to 'Log in', new_user_session_path %> |
-    <%= link_to 'Sign up', new_user_registration_path %>
+    <%= link_to t('header-nav.login'), new_user_session_path %> |
+    <%= link_to t('header-nav.logup'), new_user_registration_path %>
   <% end %>
 </p>
 

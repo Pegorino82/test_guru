@@ -1,16 +1,16 @@
-<h3><%= @question.body %></h3>
-<p>Category: <%= @question.test.title %></p>
-<p>Test: <%= @question.test.title %></p>
-<p>Level: <%= @question.test.level %></p>
+<h3><%= t('.header', body: @question.body) %></h3>
+<p><%= t('.category', title: @question.test.title) %></p>
+<p><%= t('.test', title: @question.test.title) %></p>
+<p><%= t('.level', level: @question.test.level) %></p>
 
-<p>Answers</p>
+<p><%= t('.answers') %></p>
 
 <ol>
   <%= render @question.answers %>
 </ol>
 
-<%= link_to 'Back', admin_test_path(@question.test) %> |
-<%= link_to 'Edit', edit_admin_question_path(@question) %> |
-<%= link_to 'Delete', admin_question_path(@question), method: :delete, data: {confirm: 'Delete?'} %> |
-<%= link_to 'To tests', admin_tests_path %> |
-<%= link_to 'Add answer', new_admin_question_answer_path(@question) %>
+<%= link_to t('common.back'), admin_test_path(@question.test) %> |
+<%= link_to t('common.edit'), edit_admin_question_path(@question) %> |
+<%= link_to t('common.delete'), admin_question_path(@question), method: :delete, data: {confirm: 'Delete?'} %> |
+<%= link_to t('common.tests'), admin_tests_path %> |
+<%= link_to t('.add'), new_admin_question_answer_path(@question) %>

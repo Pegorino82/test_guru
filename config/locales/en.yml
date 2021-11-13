@@ -1,33 +1,104 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  common:
+    back: 'Назад'
+    edit: 'Изменить'
+    delete: 'Удалить'
+    tests: 'К тестам'
+
+  header-nav:
+    creeting: 'Hello%{name}!'
+    login: 'Log in'
+    logup: 'Log up'
+    logout: 'Log out'
+
+  helpers:
+    submit:
+      test:
+        create: 'Create'
+        update: 'Update'
+      question:
+        create: 'Create'
+        update: 'Update'
+      answer:
+        create: 'Create'
+        update: 'Update'
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category_id: 'Category'
+
+  shared:
+    errors:
+      header:
+        one: '%{count} error found'
+        other: '%{count} errors found'
+
+  tests:
+    index:
+      header: 'Tests'
+      title: 'Title'
+      level: 'Level'
+      questions: 'Questions'
+    test:
+      start: 'Start'
+
+  results:
+    show:
+      header: 'Pass the test'
+      current_question: 'Question %{num} of %{count}'
+      next: 'Next'
+    result:
+      header: 'Test %{title} passed!'
+      success: 'You passed test'
+      failed: 'You failed test'
+      percentage: 'Success percentage %{percentage}%'
+
+  admin:
+    admin-nav:
+      creeting: 'Admin | Welcome %{name}!'
+      logout: 'Log out'
+    tests:
+      new:
+        header: 'Create test'
+      create:
+        success: 'Test created'
+      edit:
+        header: 'Edit %{title} test'
+      show:
+        header: 'Test'
+        level: 'Level'
+        questions: 'Questions'
+        add: 'Add question'
+      index:
+        header: 'Tests'
+        create: 'Create'
+        title: 'Title'
+        level: 'Level'
+        questions: 'Questions'
+    questions:
+      new:
+        header: 'Create %{title} question'
+      create:
+        success: 'Question created'
+      edit:
+        header: 'Edit %{title} question'
+      show:
+        header: 'Question %{body}'
+        category: 'Category %{title}'
+        test: 'Test %{title}'
+        level: 'Level %{level}'
+        answers: 'Answers'
+        add: 'Add answer'
+    answers:
+      new:
+        header: 'Create %{title} answer'
+      create:
+        success: 'Answer created'
+      edit:
+        header: 'Edit %{title} answer'
+      show:
+        header: 'Answer %{body}'
+        answer: 'Answer'
+        body: 'Body: %{body}'
+        correct: 'Correct: %{correct}'

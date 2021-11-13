@@ -1,4 +1,4 @@
-<h3>Pass the "<%= @result.test.title %>" test</h3>
+<h3><%= t('.header', title: @result.test.title) %></h3>
 
 <%= current_question %>
 
@@ -14,5 +14,5 @@
     </p>
   <% end %>
 
-  <p><%= form.submit 'Next' %></p>
+  <p><%= form.submit t('.next') %></p>
 <% end %>

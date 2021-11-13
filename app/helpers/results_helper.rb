@@ -6,10 +6,10 @@ module ResultsHelper
   end
 
   def message
-    @result.passed? ? 'You passed test!' : 'You failed test'
+    @result.passed? ? t('results.result.success') : t('results.result.failed')
   end
 
   def current_question
-    "Question #{@result.current_question_num} of #{@result.test.questions.count}"
+    t('results.show.current_question', num: @result.current_question_num, count: @result.test.questions.count)
   end
 end

@@ -1,10 +1,10 @@
-<h3>Question <%= @answer.question.body %></h3>
+<h3><%= t('.header', body: @answer.question.body) %></h3>
 
-<p>Answer</p>
+<p><%= t('.answer') %></p>
 
-<p>Answer: <%= @answer.body %></p>
-<p>Correct: <%= @answer.correct %></p>
+<p><%= t('.body', body: @answer.body) %></p>
+<p><%= t('.correct', correct: @answer.correct) %></p>
 
-<%= link_to 'Back', admin_question_path(@answer.question) %> |
-<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Delete', admin_answer_path(@answer), method: :delete, data: {confirm: 'Delete?'} %> |
+<%= link_to t('common.back'), admin_question_path(@answer.question) %> |
+<%= link_to t('common.edit'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('common.delete'), admin_answer_path(@answer), method: :delete, data: {confirm: 'Delete?'} %> |

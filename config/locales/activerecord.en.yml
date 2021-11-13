@@ -1,0 +1,32 @@
+en:
+  activerecord:
+    models:
+      test: 'Test'
+      catagory: 'Category'
+      question: 'Question'
+      answer: 'Answer'
+      result: 'Result'
+
+  attributes:
+    test:
+      title: 'Title'
+      level: 'Level'
+      category_id: 'Category'
+      author_id: 'Author'
+    category:
+      title: 'Title'
+      question:
+        body: 'text'
+      answer:
+        body: 'text'
+    user:
+      name: 'Имя'
+      password: 'Пароль'
+      encrypted_password: 'Пароль'
+      password_confirmation: 'Подтвердите пароль'
+      remember_me: 'Remember me'
+
+  errors:
+    messages:
+      blank: "can't be blank"
+      required: 'required'
