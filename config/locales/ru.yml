@@ -27,6 +27,8 @@ ru:
         title: 'Название'
         level: 'Уровень'
         category_id: 'Категория'
+    select:
+      prompt: 'Пожалуйста выберите'
 
   shared:
     errors:
