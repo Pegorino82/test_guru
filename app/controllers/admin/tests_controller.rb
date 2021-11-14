@@ -21,7 +21,7 @@ module Admin
     def create
       @test = current_user.authorship.build(test_params)
       if @test.save
-        redirect_to admin_test_path(@test)
+        redirect_to admin_test_path(@test), notice: t('.success')
       else
         render :new
       end
