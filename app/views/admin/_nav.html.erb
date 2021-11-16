@@ -1,4 +1,7 @@
-<p class="admin-nav header">
-  <%= t('admin.admin-nav.creeting', name: current_user.name.capitalize) %>
-  <%= link_to t('admin.admin-nav.logout'), destroy_user_session_path, method: :delete %>
-</p>
+<nav class="navbar navbar-light">
+  <%= link_to 'Test Guru', root_path, class: "navbar-brand" %>
+  <div class="navbar-text">
+    <%= t('admin.admin-nav.creeting', name: current_user.name.capitalize) %>
+    <%= link_to t('admin.admin-nav.logout'), destroy_user_session_path, method: :delete , class: 'nav-link'%>
+  </div>
+</nav>

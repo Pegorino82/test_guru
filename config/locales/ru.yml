@@ -10,6 +10,7 @@ ru:
     login: 'Войти'
     logup: 'Зарегистрироваться'
     logout: 'Выйти'
+    admin: 'Админка'
 
   helpers:
     submit:

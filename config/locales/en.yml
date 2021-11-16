@@ -10,6 +10,7 @@ en:
     login: 'Log in'
     logup: 'Log up'
     logout: 'Log out'
+    admin: 'Admin'
 
   helpers:
     submit:

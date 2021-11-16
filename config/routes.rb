@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'tests#index'
 
   devise_for :users,
-             path_names: { sign_in: :log_in, sign_out: :sign_out },
+             path_names: { sign_in: :log_in, sign_out: :log_out },
              :controllers => {
                sessions: 'sessions'
              }

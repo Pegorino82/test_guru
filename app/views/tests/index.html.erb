@@ -1,13 +1,19 @@
-<h3><%= t('.header') %></h3>
+<p class="h3">
+  <%= t('.header') %>
+</p>
 
-<table>
-  <thead style="text-align: center;">
-    <tr>
-      <td><%= t('.title') %></td>
-      <td><%= t('.level') %></td>
-      <td rowspan="2"><%= t('.questions') %></td>
-    </tr>
-  </thead>
+<div class="container d-flex justify-content-center">
+  <div class="col col-md-8">
+    <table class="table table-striped bg-light">
+      <thead>
+      <tr>
+        <td><%= t('.title') %></td>
+        <td><%= t('.level') %></td>
+        <td rowspan="2"><%= t('.questions') %></td>
+      </tr>
+      </thead>
 
-  <%= render @tests %>
-</table>
+      <%= render @tests %>
+    </table>
+  </div>
+</div>
