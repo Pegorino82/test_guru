@@ -36,6 +36,9 @@ gem 'rails-i18n', '>= 1.8.10'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.3'
 
+# http
+gem 'faraday'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
