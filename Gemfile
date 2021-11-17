@@ -27,10 +27,14 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Authentication
-gem 'devise'
+gem 'devise', '>= 4.8.0'
 
 #Localization
-gem 'rails-i18n'
+gem 'rails-i18n', '>= 1.8.10'
+
+# ui
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.1.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
