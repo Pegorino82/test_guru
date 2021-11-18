@@ -14,5 +14,6 @@
     </p>
   <% end %>
 
+  <p><%= link_to t('.gist'), gist_result_path(@result), method: :post %></p>
   <p><%= form.submit t('.next') %></p>
 <% end %>

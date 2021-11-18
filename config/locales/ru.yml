@@ -53,11 +53,15 @@ ru:
       header: 'Пройдите тест "%{title}"'
       current_question: 'Вопрос %{num} из %{count}'
       next: 'Далее'
+      gist: 'Создать Gist'
     result:
       header: 'Тест %{title} завершен!'
       success: 'Вы прошли тест'
       failed: 'Тест не пройден'
       percentage: 'Процент успеха %{percentage}%'
+    gist:
+      success: '<a href=%{link} target=_blank>Gist создан</a>'
+      failure: 'Gist не удалось создать'
 
   admin:
     admin-nav:
@@ -107,3 +111,7 @@ ru:
         answer: 'Ответ'
         body: 'Текст: %{body}'
         correct: 'Верно: %{correct}'
+
+  services:
+    gist_question_service:
+      description: "Test Guru вопрос из теста %{title}"
