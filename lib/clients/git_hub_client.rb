@@ -6,16 +6,12 @@ class GitHubClient
   end
 
   def create_gist(params)
-    @http_client.post('gists') do |request|
-      request.headers['Authorization'] = ENV['GITHUB_TEST_GURU_ACCESS_TOKEN']
-      request.headers['Content-Type'] = 'application/json'
-      request.body = params.to_json
-    end
+    @http_client.create_gist(params.to_json)
   end
 
   private
 
   def setup_http_client
-    Faraday.new(url: ROOT_ENDPOINT)
+    Octokit::Client.new(access_token: ENV['GITHUB_TEST_GURU_ACCESS_TOKEN'])
   end
 end
