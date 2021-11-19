@@ -19,6 +19,12 @@ class ResultsController < ApplicationController
   def gist
     result = GistQuestionService.new(@result.current_question)
 
+    if result.success?
+      Gist.create!(url: result.html_url,
+                   question: @result.current_question,
+                   author: current_user)
+    end
+
     redirect_to @result, flash_options(result)
   end
 
