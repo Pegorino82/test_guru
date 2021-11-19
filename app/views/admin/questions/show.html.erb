@@ -9,7 +9,7 @@
   <%= render @question.answers %>
 </ol>
 
-<%= link_to t('common.back'), admin_test_path(@question.test) %> |
+<%= link_to t('common.back'), request.referrer %> |
 <%= link_to t('common.edit'), edit_admin_question_path(@question) %> |
 <%= link_to t('common.delete'), admin_question_path(@question), method: :delete, data: {confirm: 'Delete?'} %> |
 <%= link_to t('common.tests'), admin_tests_path %> |

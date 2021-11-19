@@ -66,6 +66,7 @@ ru:
   admin:
     admin-nav:
       creeting: 'Админка | Привет %{name}!'
+      gists: 'Gists'
       logout: 'Выйти'
     tests:
       new:
@@ -111,6 +112,12 @@ ru:
         answer: 'Ответ'
         body: 'Текст: %{body}'
         correct: 'Верно: %{correct}'
+    gists:
+      index:
+        header: 'Список Gist'
+        question: 'Вопрос'
+        gist_url: 'Ссылка'
+        author: 'Автор'
 
   services:
     gist_question_service:
