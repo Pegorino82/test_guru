@@ -109,6 +109,12 @@ en:
         answer: 'Answer'
         body: 'Body: %{body}'
         correct: 'Correct: %{correct}'
+    gists:
+      index:
+        header: 'Gists'
+        question: 'Question'
+        gist_url: 'Link'
+        author: 'Author'
 
   services:
     gist_question_service:
