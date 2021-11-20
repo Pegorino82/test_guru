@@ -60,7 +60,7 @@ ru:
       failed: 'Тест не пройден'
       percentage: 'Процент успеха %{percentage}%'
     gist:
-      success: '<a href=%{link} target=_blank>Gist создан</a>'
+      success_html: <a href=%{link} target=_blank>Gist создан</a>
       failure: 'Gist не удалось создать'
 
   admin:

@@ -36,7 +36,7 @@ class ResultsController < ApplicationController
 
   def flash_options(result)
     if result.success?
-      { notice: t('results.gist.success', link: result.html_url ) }
+      { notice: t('results.gist.success_html', link: result.html_url ) }
     else
       { alert: t('results.gist.failure') }
     end

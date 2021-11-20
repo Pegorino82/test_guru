@@ -58,7 +58,7 @@ en:
       failed: 'You failed test'
       percentage: 'Success percentage %{percentage}%'
     gist:
-      success: '<a href=%{link} target=_blank>Gist created</a>'
+      success_html: <a href=%{link} target=_blank>Gist created</a>
       failure: 'Gist failed'
 
   admin:
