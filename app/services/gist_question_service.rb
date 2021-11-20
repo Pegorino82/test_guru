@@ -1,31 +1,34 @@
 class GistQuestionService
 
-  def initialize(question, client: nil)
+  def initialize(client = default_client)
+    @client = client
+  end
+
+  def call(question)
     @question = question
-    @test = @question.test
-    @client = client || GitHubClient.new
-    @result = create_gist
-  end
-
-  def success?
-    html_url.present?
-  end
-
-  def html_url
-    @result.html_url
-  end
-
-  def create_gist
-    @client.create_gist(gist_params)
+    @gist_result = @client.create_gist(gist_params)
+    perform.new(html_url)
   end
 
   private
 
+  def perform(*args)
+    Struct.new(:html_url) do
+      def success?
+        !html_url.nil?
+      end
+    end
+  end
+
+  def html_url
+    @gist_result.html_url if @gist_result && @gist_result.html_url.present?
+  end
+
   def gist_params
     {
-      description: I18n.t('services.gist_question_service.description', title: @test.title),
+      description: I18n.t('services.gist_question_service.description', title: @question.test.title),
       files: {
-        "#{@test.title}_#{@question.body}.txt" => {
+        "#{@question.test.title}_#{@question.body}.txt" => {
           content: gist_content
         }
       }
@@ -34,5 +37,9 @@ class GistQuestionService
 
   def gist_content
     @question.answers.map {|answer| answer.body}.join("\n")
+  end
+
+  def default_client
+    GitHubClient.new
   end
 end

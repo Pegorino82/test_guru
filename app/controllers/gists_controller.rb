@@ -1,8 +1,8 @@
 class GistsController < ApplicationController
 
   def create
-    @result = Result.find_by(gist_params)
-    gist_question = GistQuestionService.new(@result.current_question)
+    @result = Result.find_by(result_params)
+    gist_question = GistQuestionService.new.call(@result.current_question)
 
     if gist_question.success?
       Gist.create!(url: gist_question.html_url,
@@ -18,7 +18,7 @@ class GistsController < ApplicationController
 
   private
 
-  def gist_params
+  def result_params
     params.require(:result).permit(:id)
   end
 end

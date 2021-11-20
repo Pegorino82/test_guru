@@ -6,7 +6,11 @@ class GitHubClient
   end
 
   def create_gist(params)
-    @http_client.create_gist(params.to_json)
+    begin
+      @http_client.create_gist(params.to_json)
+    rescue => e
+      nil
+    end
   end
 
   private
