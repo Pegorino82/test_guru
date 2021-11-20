@@ -1,7 +1,7 @@
 <tbody>
 <tr>
   <td><%= link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question) %></td>
-  <td><%= link_to hash(gist.url), gist.url , target: '_blank' %></td>
+  <td><%= link_to gist_hash(gist.url), gist.url , target: '_blank' %></td>
   <td><%= gist.author.email %></td>
 </tr>
 </tbody>
