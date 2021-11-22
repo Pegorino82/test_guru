@@ -22,7 +22,5 @@ module TestGuru
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.i18n.default_locale = :ru
-
-    config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end

@@ -1,5 +1,6 @@
-class GistQuestionService
+# frozen_string_literal: true
 
+class GistQuestionService
   def initialize(client = default_client)
     @client = client
   end
@@ -12,7 +13,7 @@ class GistQuestionService
 
   private
 
-  def perform(*args)
+  def perform(*_args)
     Struct.new(:html_url) do
       def success?
         !html_url.nil?
@@ -36,10 +37,10 @@ class GistQuestionService
   end
 
   def gist_content
-    @question.answers.map {|answer| answer.body}.join("\n")
+    @question.answers.map(&:body).join("\n")
   end
 
   def default_client
-    GitHubClient.new
+    Octokit::Client.new(access_token: ENV['GITHUB_TEST_GURU_ACCESS_TOKEN'])
   end
 end

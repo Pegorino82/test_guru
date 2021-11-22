@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ResultsController < ApplicationController
-  before_action :find_result, only: %i[show update result gist]
+  before_action :find_result, only: %i[show update result]
 
   def show; end
 
