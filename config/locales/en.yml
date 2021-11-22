@@ -115,6 +115,7 @@ en:
         question: 'Question'
         gist_url: 'Link'
         author: 'Author'
+        delete: 'Delete'
 
   services:
     gist_question_service:

@@ -118,6 +118,7 @@ ru:
         question: 'Вопрос'
         gist_url: 'Ссылка'
         author: 'Автор'
+        delete: 'Удалить'
 
   services:
     gist_question_service:
