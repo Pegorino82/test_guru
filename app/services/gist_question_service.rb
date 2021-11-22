@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class GistQuestionService
+  Result = Struct.new(:html_url) do
+    def success?
+      !html_url.nil?
+    end
+  end
+
   def initialize(client = default_client)
     @client = client
   end
@@ -8,18 +14,10 @@ class GistQuestionService
   def call(question)
     @question = question
     @gist_result = @client.create_gist(gist_params)
-    perform.new(html_url)
+    Result.new(html_url)
   end
 
   private
-
-  def perform(*_args)
-    Struct.new(:html_url) do
-      def success?
-        !html_url.nil?
-      end
-    end
-  end
 
   def html_url
     @gist_result.html_url if @gist_result && @gist_result.html_url.present?
