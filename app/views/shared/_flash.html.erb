@@ -1,7 +1,5 @@
 <div>
   <% flash.each do |key, message| %>
-    <div class="alert <%= flash_to_css(key) %> mt-3">
-      <%= raw message %>
-    </div>
+    <%= content_tag :div, message.html_safe, class: "alert #{flash_to_css(key)} mt-3" %>
   <% end %>
 </div>
