@@ -36,8 +36,14 @@ gem 'rails-i18n', '>= 1.8.10'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.3'
 
+# http
+gem "octokit", "~> 4.0"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+# env
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

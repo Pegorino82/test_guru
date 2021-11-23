@@ -20,11 +20,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :gists, only: :create
+
   namespace :admin do
     resources :tests do
       resources :questions, shallow: true do
         resources :answers, shallow: true, except: :index
       end
     end
+    resources :gists, only: %i[index destroy]
   end
 end

@@ -51,11 +51,15 @@ en:
       header: 'Pass the test'
       current_question: 'Question %{num} of %{count}'
       next: 'Next'
+      gist: 'Create Gist'
     result:
       header: 'Test %{title} passed!'
       success: 'You passed test'
       failed: 'You failed test'
       percentage: 'Success percentage %{percentage}%'
+    gist:
+      success_html: <a href=%{link} target=_blank>Gist created</a>
+      failure: 'Gist failed'
 
   admin:
     admin-nav:
@@ -105,3 +109,14 @@ en:
         answer: 'Answer'
         body: 'Body: %{body}'
         correct: 'Correct: %{correct}'
+    gists:
+      index:
+        header: 'Gists'
+        question: 'Question'
+        gist_url: 'Link'
+        author: 'Author'
+        delete: 'Delete'
+
+  services:
+    gist_question_service:
+      description: "Test Guru question from test %{title}"
