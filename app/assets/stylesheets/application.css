@@ -1,5 +1,6 @@
-@import "bootstrap";
+@import "global.scss";
 @import "flash.scss";
+@import "typography/icons.scss";
 
 .navbar {
     background-color: #e3f2fd;
