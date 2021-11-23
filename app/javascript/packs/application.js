@@ -11,6 +11,7 @@ import 'bootstrap'
 import '../stylesheets/application'
 import '../../assets/stylesheets/application'
 import '../utilities/sorting'
+import '../utilities/password_confirmation'
 
 Rails.start()
 Turbolinks.start()
