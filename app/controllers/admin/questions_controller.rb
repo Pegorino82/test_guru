@@ -35,7 +35,7 @@ module Admin
     def destroy
       @question.destroy!
 
-      redirect_to @question.test
+      redirect_to admin_test_path(@question.test)
     end
 
     private
