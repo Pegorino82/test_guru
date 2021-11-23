@@ -10,6 +10,7 @@ import "channels"
 import 'bootstrap'
 import '../stylesheets/application'
 import '../../assets/stylesheets/application'
+import '../utilities/sorting'
 
 Rails.start()
 Turbolinks.start()
