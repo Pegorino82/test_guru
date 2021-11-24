@@ -8,8 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
-import '../stylesheets/application'
-import '../../assets/stylesheets/application'
 import '../utilities/sorting'
 import '../utilities/password_confirmation'
 

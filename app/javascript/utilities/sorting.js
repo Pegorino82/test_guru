@@ -1,9 +1,8 @@
 document.addEventListener('turbolinks:load', () => {
     const control = document.querySelector('.sort_by_title');
-    if (!control) {
-        return
+    if (control) {
+        control.addEventListener('click', sortByTitle)
     }
-    control.addEventListener('click', sortByTitle)
 })
 
 const sortByTitle = () => {
@@ -31,7 +30,6 @@ const sortByTitle = () => {
         sortedTableBody.appendChild(row)
     }
     tableBody.parentNode.replaceChild(sortedTableBody, tableBody)
-
 }
 
 const compareRowsAsc = (row1, row2) => {
