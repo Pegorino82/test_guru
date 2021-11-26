@@ -2,6 +2,10 @@
 
 <%= current_question %>
 
+<%= render 'shared/progress',
+           total: @result.test.questions.size,
+           current: @result.current_question_num %>
+
 <p>
   <%= @result.current_question.body %>
 </p>

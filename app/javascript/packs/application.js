@@ -10,6 +10,7 @@ import "channels"
 import 'bootstrap'
 import '../utilities/sorting'
 import '../utilities/password_confirmation'
+import '../utilities/test_progress'
 
 Rails.start()
 Turbolinks.start()
