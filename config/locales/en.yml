@@ -1,9 +1,10 @@
 en:
   common:
-    back: 'Назад'
-    edit: 'Изменить'
-    delete: 'Удалить'
-    tests: 'К тестам'
+    back: 'Back'
+    edit: 'Edit'
+    delete: 'Delete'
+    tests: 'To tests'
+    cancel: 'Cancel'
 
   header-nav:
     creeting: 'Hello%{name}!'

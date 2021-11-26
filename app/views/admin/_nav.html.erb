@@ -2,7 +2,7 @@
   <%= link_to 'Test Guru', root_path, class: "navbar-brand" %>
   <div class="navbar-text">
     <%= t('admin.admin-nav.creeting', name: current_user.name.capitalize) %>
-    <%= link_to t('admin.admin-nav.gists'), admin_gists_path , class: 'nav-link'%>
-    <%= link_to t('admin.admin-nav.logout'), destroy_user_session_path, method: :delete , class: 'nav-link'%>
+    <%= link_to t('admin.admin-nav.gists'), admin_gists_path , class: 'form-inline-link'%>
+    <%= link_to t('admin.admin-nav.logout'), destroy_user_session_path, method: :delete , class: 'form-inline-link'%>
   </div>
 </nav>
