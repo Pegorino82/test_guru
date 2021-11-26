@@ -1,0 +1,10 @@
+<div class="progress">
+  <%= content_tag :div,
+                  class: "progress-bar",
+                  role: "progressbar",
+                  aria_valuenow: "0",
+                  aria_valuemin: "0",
+                  aria_valuemax: "100",
+                  data: { total: total, current: current } do %>
+  <% end %>
+</div>
