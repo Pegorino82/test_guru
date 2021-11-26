@@ -33,11 +33,12 @@ gem 'devise', '>= 4.8.0'
 gem 'rails-i18n', '>= 1.8.10'
 
 # ui
-gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.3'
+gem 'popper_js', '~> 2.9.3'
 
 # http
 gem "octokit", "~> 4.0"
+gem 'octicons_helper'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

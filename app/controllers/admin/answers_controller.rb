@@ -33,7 +33,7 @@ module Admin
     def destroy
       @answer.destroy!
 
-      redirect_to @answer.question
+      redirect_to admin_question_path(@answer.question)
     end
 
     private

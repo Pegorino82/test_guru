@@ -6,14 +6,19 @@
   <div class="col col-md-8">
     <table class="table table-striped bg-light">
       <thead>
-      <tr>
-        <td><%= t('.title') %></td>
-        <td><%= t('.level') %></td>
-        <td rowspan="2"><%= t('.questions') %></td>
-      </tr>
+        <tr>
+          <th class="sort_by_title pointer">
+            <%= t('.title') %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
+          <th><%= t('.level') %></th>
+          <th rowspan="2"><%= t('.questions') %></th>
+        </tr>
       </thead>
-
-      <%= render @tests %>
+      <tbody>
+        <%= render @tests %>
+      </tbody>
     </table>
   </div>
 </div>
