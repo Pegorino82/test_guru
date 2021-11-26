@@ -1,9 +1,17 @@
 <tr>
-  <td><%= link_to test.title, admin_test_path(test) %></td>
-  <td><%= test_level(test) %></td>
-  <td><% test.questions.map do |question| %>
+  <td class="align-middle">
+    <%= link_to test.title, admin_test_path(test), data: { test_id: test.id } %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
+    <%= link_to t('common.edit'), edit_admin_test_path(test),
+                data: { test_id: test.id,
+                        name_locale_edit: t('common.edit'),
+                        name_locale_cancel: t('common.cancel')},
+                class: "form-inline-link" %>
+  </td>
+  <td class="align-middle"><%= test_level(test) %></td>
+  <td class="align-middle">
+    <% test.questions.map do |question| %>
       <%= link_to question.body, admin_question_path(question) %> |
     <% end %>
   </td>
 </tr>
-
