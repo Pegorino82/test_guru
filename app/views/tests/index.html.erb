@@ -20,5 +20,8 @@
         <%= render @tests %>
       </tbody>
     </table>
+
+    <%= will_paginate @tests, renderer: 'BootstrapPaginateRenderer' %>
+
   </div>
 </div>
