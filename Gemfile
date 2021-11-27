@@ -40,6 +40,9 @@ gem 'popper_js', '~> 2.9.3'
 gem "octokit", "~> 4.0"
 gem 'octicons_helper'
 
+# pagination
+gem 'will_paginate', '~> 3.1.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
