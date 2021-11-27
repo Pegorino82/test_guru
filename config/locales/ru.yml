@@ -4,6 +4,7 @@ ru:
     edit: 'Изменить'
     delete: 'Удалить'
     tests: 'К тестам'
+    cancel: 'Отмена'
 
   header-nav:
     creeting: 'Привет%{name}!'
