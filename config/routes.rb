@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # get 'sessions/new'
   root to: 'tests#index'
 
   devise_for :users,
@@ -7,6 +6,9 @@ Rails.application.routes.draw do
              :controllers => {
                sessions: 'sessions'
              }
+
+  get 'users/:id/feedbacks/new', to: 'feedbacks#new', as: :user_new_feedbacks
+  post 'users/:id/feedbacks', to: 'feedbacks#create', as: :user_feedbacks
 
   resources :tests, only: :index do
     member do

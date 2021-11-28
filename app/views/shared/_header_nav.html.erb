@@ -7,6 +7,7 @@
       <% if current_user.admin? %>
       <%= link_to t('header-nav.admin'), admin_tests_path, class: 'form-inline-link' %>
         <% end %>
+      <%= link_to t('header-nav.feedback'), user_new_feedbacks_path(current_user), class: 'form-inline-link mx-1' %>
       <%= link_to t('header-nav.logout'), destroy_user_session_path, method: :delete, class: 'form-inline-link' %>
     <% else %>
       <%= link_to t('header-nav.login'), new_user_session_path, class: 'form-inline-link' %> |

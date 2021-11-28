@@ -12,6 +12,7 @@ en:
     logup: 'Log up'
     logout: 'Log out'
     admin: 'Admin'
+    feedback: 'Feedback'
 
   helpers:
     submit:
@@ -61,6 +62,12 @@ en:
     gist:
       success_html: <a href=%{link} target=_blank>Gist created</a>
       failure: 'Gist failed'
+
+  feedbacks:
+    form:
+      send: 'Send'
+    create:
+      success: '%{user}, your feedback sent'
 
   admin:
     admin-nav:
