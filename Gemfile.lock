@@ -138,13 +138,11 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.1)
-    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     multipart-post (2.1.1)
     nio4r (2.5.8)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     octicons (16.1.1)
     octicons_helper (16.1.1)
@@ -232,7 +230,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -277,6 +274,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   letter_opener
   listen (~> 3.3)
+  nokogiri (>= 1.8.5)
   octicons_helper
   octokit (~> 4.0)
   pg (~> 1.2)
@@ -288,7 +286,6 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   spring
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
