@@ -5,6 +5,7 @@
   </head>
   <body>
     <h3>Feedback from <%= @feedback.user.name.capitalize %></h3>
+    <p><%= @feedback.user.email %></p>
     <p><%= @feedback.message %></p>
   </body>
 </html>
