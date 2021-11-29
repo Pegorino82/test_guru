@@ -3,7 +3,7 @@
     <%= link_to test.title, admin_test_path(test), data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
     <%= link_to t('common.edit'), edit_admin_test_path(test),
-                data: { test_id: test.id,
+                data: { edit_inline_test_id: test.id,
                         name_locale_edit: t('common.edit'),
                         name_locale_cancel: t('common.cancel')},
                 class: "form-inline-link" %>
