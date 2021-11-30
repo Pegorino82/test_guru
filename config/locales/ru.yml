@@ -12,6 +12,7 @@ ru:
     logup: 'Зарегистрироваться'
     logout: 'Выйти'
     admin: 'Админка'
+    feedback: 'Отправить отзыв'
 
   helpers:
     submit:
@@ -63,6 +64,12 @@ ru:
     gist:
       success_html: <a href=%{link} target=_blank>Gist создан</a>
       failure: 'Gist не удалось создать'
+
+  feedbacks:
+    form:
+      send: 'Отправить'
+    create:
+      success: '%{user}, Ваш отзыв отправлен'
 
   admin:
     admin-nav:

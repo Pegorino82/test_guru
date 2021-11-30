@@ -1,8 +1,28 @@
 en:
   devise:
+    confirmations:
+      header: 'Resend confirmation instructions'
+      resend_instructions: 'Resend confirmation instructions'
     registrations:
       new:
         sign_up: 'Sign up'
+      edit:
+        header: 'Edit'
+        password: "leave blank if you don't want to change it"
+        current_password: 'we need your current password to confirm your changes'
+        submit: 'Update'
+        unhappy: 'Unhappy?'
+        cancel_account: 'Cancel my account'
+        back: 'Back'
+    passwords:
+      new:
+        header: 'Forgot your password?'
+        submit: 'Send me reset password instructions'
+      edit:
+        header: 'Change your password'
+        new_password: 'New password'
+        confirm_new_password: 'Confirm new password'
+        submit: 'Change my password'
     sessions:
       new:
         log_in: 'Log in'
@@ -10,3 +30,22 @@ en:
       minimum_password_length:
         one: "(%{count} characters minimum)"
         other: "(%{count} characters minimum)"
+    unlocks:
+      header: 'Resend unlock instructions'
+      submit: 'Resend unlock instructions'
+    mailer:
+      greeting: 'Welcome'
+      confirmation_instructions:
+        subject: "You can confirm your account email through the link below"
+      reset_password_instructions:
+        subject: "Someone has requested a link to change your password. You can do this through the link below."
+        link: "Change my password"
+        ignore: "If you didn't request this, please ignore this email."
+      unlock_instructions:
+        reason: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        subject: "Click the link below to unlock your account"
+      email_changed:
+        subject_processing: "We're contacting you to notify you that your email is being changed to"
+        subject_processed: "We're contacting you to notify you that your email has been changed to"
+      password_change:
+        subject: "We're contacting you to notify you that your password has been changed."

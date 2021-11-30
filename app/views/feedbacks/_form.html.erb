@@ -1,0 +1,17 @@
+<%#= form_with url: feedbacks_user_path(@user), method: :post do |form| %>
+<%= form_with model: [@user, @feedback] do |form| %>
+  <%= render 'shared/errors', resource: @feedbacks %>
+  <br>
+    <%= form.hidden_field :user_id, value: @user.id, readonly: true %>
+
+    <%= form.label :user_name %></br>
+    <%= form.text_field :user_name, value: @user.name, readonly: true %></br>
+
+    <%= form.label :user_email %></br>
+    <%= form.text_field :user_email, value: @user.email, readonly: true %></br>
+
+    <%= form.label :message %></br>
+    <%= form.text_area :message, rows: 5, cols: 50 %>
+  </p>
+  <p><%= form.submit t('.send') %></p>
+<% end %>

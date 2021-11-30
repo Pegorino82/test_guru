@@ -44,3 +44,4 @@ secret.txt
 .idea/
 *.sql
 .env
+.ruby-gemset
