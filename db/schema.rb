@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_28_080225) do
+ActiveRecord::Schema.define(version: 2021_12_01_161542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,26 @@ ActiveRecord::Schema.define(version: 2021_11_28_080225) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badge_rules", force: :cascade do |t|
+    t.bigint "category_id"
+    t.string "level"
+    t.integer "amount"
+    t.boolean "all"
+    t.integer "attempts"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_badge_rules_on_category_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "path", null: false
+    t.bigint "badge_rule_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_rule_id"], name: "index_badges_on_badge_rule_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -100,6 +120,8 @@ ActiveRecord::Schema.define(version: 2021_11_28_080225) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badge_rules", "categories"
+  add_foreign_key "badges", "badge_rules"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users", column: "author_id"
