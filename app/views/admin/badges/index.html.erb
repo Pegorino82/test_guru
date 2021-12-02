@@ -1,0 +1,23 @@
+<h3><%= t('.header') %></h3>
+
+<p><%= link_to t('.create'), new_admin_badge_path %></p>
+<p><%= link_to t('.create_rule'), new_admin_badge_rule_path %></p>
+
+<%= render'shared/errors', resource: @badge %>
+
+<table class="table">
+  <thead style="text-align: center;">
+  <tr>
+    <th class="sort_by_title pointer">
+      <%= t('.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
+    <th><%= t('.path') %></th>
+    <th rowspan="3"><%= t('.rule') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @badges %>
+  </tbody>
+</table>

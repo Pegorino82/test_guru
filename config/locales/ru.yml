@@ -75,6 +75,7 @@ ru:
     admin-nav:
       creeting: 'Админка | Привет %{name}!'
       gists: 'Gists'
+      badges: 'Badges'
       logout: 'Выйти'
     tests:
       new:
@@ -127,6 +128,29 @@ ru:
         gist_url: 'Ссылка'
         author: 'Автор'
         delete: 'Удалить'
+    badges:
+      index:
+        header: 'Бэйджи'
+        create: 'Создать бэйдж'
+        create_rule: 'Создать условие'
+        title: 'Название'
+        path: 'Ссылка'
+        rule: 'Условие'
+        destroy: 'Удалить'
+      create:
+        header: 'Новый бэйдж'
+    badge_rules:
+      show:
+        header: 'Бэйдж'
+        rules: 'Условия'
+        category: 'Категория'
+        level: 'Уровень'
+        amount: 'Количество пройденных тестов'
+        all: 'Пройти все тесты'
+        attempts: 'Попыток'
+        not_set: 'Не задано'
+      create:
+        header: 'Новое условие для получения бэйджа'
 
   services:
     gist_question_service:

@@ -1,0 +1,33 @@
+<p>
+  <strong><%= t('.header') %></strong>
+  <%= @badge_rule.title %>
+</p>
+
+<p><%= t('.rules') %></p>
+
+<ul>
+  <li>
+    <%= t('.category') %>
+    <%= @badge_rule.category.nil? ? t('.not_set') : @badge_rule.category.title %>
+  </li>
+  <li>
+    <%= t('.level') %>
+    <%= @badge_rule.level || t('.not_set') %>
+  </li>
+  <li>
+    <%= t('.amount') %>
+    <%= @badge_rule.amount || t('.not_set') %>
+  </li>
+  <li>
+    <%= t('.all') %>
+    <%= @badge_rule.all %>
+  </li>
+  <li>
+    <%= t('.attempts') %>>
+    <%= @badge_rule.attempts || t('.not_set') %>
+  </li>
+</ul>
+
+<%= link_to t('common.back'), admin_badges_path %> |
+<%= link_to t('common.delete'), admin_badge_rule_path(@badge_rule), method: :delete, data: {confirm: 'Delete?'} %>
+
