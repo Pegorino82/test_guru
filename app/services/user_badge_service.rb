@@ -29,7 +29,7 @@ class UserBadgeService
 
       # по количеству попыток
       unless badge_rule.attempts.nil?
-        add_badge = false if user_passed_tests_ids.count(@test.id) > badge_rule.attempts
+        add_badge = false if @user.results.where(test: @test).count > badge_rule.attempts
       end
 
       if add_badge
