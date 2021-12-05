@@ -3,13 +3,10 @@
 require_relative './validators/badge_rule_validator'
 
 class BadgeRule < ApplicationRecord
-  LEVELS = TestsHelper::LEVELS.values.map{|x| x.to_s}.push(nil).freeze
+  LEVELS = TestsHelper::LEVELS.values.map { |x| x.to_s }.freeze
 
-  belongs_to :category
+  belongs_to :category, optional: true
   has_many :badges, dependent: :destroy
-
-  validates :level, inclusion: { in: LEVELS,
-                                   message: "available [#{LEVELS.join(', ')}] only" }
 
   validates_with BadgeRuleValidator
 end

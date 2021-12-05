@@ -36,6 +36,7 @@ module Admin
     def badge_rule_params
       params.require(:badge_rule).permit(:title,
                                          :category_id,
+                                         :level,
                                          :amount,
                                          :all,
                                          :attempts)

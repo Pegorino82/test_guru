@@ -13,6 +13,7 @@ ru:
     logout: 'Выйти'
     admin: 'Админка'
     feedback: 'Отправить отзыв'
+    badges: 'Награды'
 
   helpers:
     submit:
@@ -61,6 +62,7 @@ ru:
       success: 'Вы прошли тест'
       failed: 'Тест не пройден'
       percentage: 'Процент успеха %{percentage}%'
+      badge_win: 'Вы заработали'
     gist:
       success_html: <a href=%{link} target=_blank>Gist создан</a>
       failure: 'Gist не удалось создать'
@@ -70,6 +72,12 @@ ru:
       send: 'Отправить'
     create:
       success: '%{user}, Ваш отзыв отправлен'
+
+  badges:
+    index:
+      header: 'Награды'
+      title: 'Название'
+      path: 'Изображение'
 
   admin:
     admin-nav:

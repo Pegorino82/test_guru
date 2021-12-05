@@ -1,0 +1,17 @@
+<h3><%= t('.header') %></h3>
+
+<table class="table">
+  <thead style="text-align: center;">
+  <tr>
+    <th class="sort_by_title pointer">
+      <%= t('.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
+    <th><%= t('.path') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @badges %>
+  </tbody>
+</table>

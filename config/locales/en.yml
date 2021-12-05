@@ -13,6 +13,7 @@ en:
     logout: 'Log out'
     admin: 'Admin'
     feedback: 'Feedback'
+    badges: 'Badges'
 
   helpers:
     submit:
@@ -59,6 +60,7 @@ en:
       success: 'You passed test'
       failed: 'You failed test'
       percentage: 'Success percentage %{percentage}%'
+      badge_win: 'You win'
     gist:
       success_html: <a href=%{link} target=_blank>Gist created</a>
       failure: 'Gist failed'
@@ -68,6 +70,12 @@ en:
       send: 'Send'
     create:
       success: '%{user}, your feedback sent'
+
+  badges:
+    index:
+      header: 'Badges'
+      title: 'Title'
+      path: 'Image'
 
   admin:
     admin-nav:
