@@ -7,6 +7,7 @@ class BadgeRule < ApplicationRecord
   belongs_to :category, optional: true
   has_many :badges, dependent: :destroy
 
+  validates :title, presence: true
   validates_with Validators::BadgeRuleValidator
 end
 
