@@ -11,7 +11,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
     if @result.completed?
       badges = UserBadgeService.new(@result).gain_badges
-      win_badges_flash(badges)
+      win_badges_flash(badges.map {|b| b.title})
       redirect_to result_result_path(@result)
     else
       render :show

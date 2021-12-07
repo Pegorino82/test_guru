@@ -3,6 +3,9 @@
 module Admin
   class BadgesController < Admin::BaseController
     before_action :find_badge, only: %i[update destroy]
+    before_action :find_categories, only: %i[new create]
+    before_action :find_levels, only: %i[new create]
+    before_action :dataset, only: %i[new create]
 
     def index
       @badges = Badge.all
@@ -44,8 +47,23 @@ module Admin
     end
 
     def badge_params
-      params.require(:badge).permit(:title, :path, :badge_rule_id)
+      params.require(:badge).permit(:title, :path, :rule, :rule_value)
     end
 
+    def find_categories
+      @categories = Category.all.pluck(:id, :title)
+    end
+
+    def find_levels
+      @levels = TestsHelper::LEVELS.values.map {|val| [val, val]}
+    end
+
+    def dataset
+      @rules = {
+        'all_by_category' => @categories,
+        'all_by_level' => @levels,
+        'on_first_try' => []
+      }
+    end
   end
 end
