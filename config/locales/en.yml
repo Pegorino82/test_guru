@@ -143,20 +143,11 @@ en:
         path: 'Badge path'
         rule: 'Rule'
         destroy: 'Delete'
+        edit: 'Edit'
       create:
         header: 'New badge'
-      badge_rules:
-        show:
-          header: 'Badges'
-          rules: 'Rules'
-          category: 'Category'
-          level: 'Level'
-          amount: 'Passed tests amount'
-          all: 'Pass all test'
-          attempts: 'Attempts'
-          not_set: 'Not set'
-        create:
-          header: 'New badge rule'
+      edit:
+        header: 'Edit badge'
 
   services:
     gist_question_service:

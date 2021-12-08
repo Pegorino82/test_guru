@@ -6,6 +6,8 @@ document.addEventListener('turbolinks:load', () => {
                 const rule = event.target.value
                 const rule_values = JSON.parse(badgeTable.dataset.rules)[rule]
                 fillRuleValues(rule_values)
+            } else if (event.target.getAttribute('id') === 'badge_path') {
+                badgeImage(event.target.value)
             }
         })
     }
@@ -24,5 +26,15 @@ const fillRuleValues = (values) => {
         elem.value = value[0];
         elem.textContent = value[1]
         ruleValues.appendChild(elem)
+    }
+}
+
+const badgeImage = (path) => {
+    const badgeImageElement = document.getElementById('badge-image');
+    badgeImageElement.setAttribute('src', path)
+    if (path) {
+        badgeImageElement.classList.remove('hide');
+    } else {
+        badgeImageElement.classList.add('hide');
     }
 }

@@ -145,20 +145,11 @@ ru:
         path: 'Ссылка'
         rule: 'Условие'
         destroy: 'Удалить'
+        edit: 'Изменить'
       create:
         header: 'Новый бэйдж'
-    badge_rules:
-      show:
-        header: 'Бэйдж'
-        rules: 'Условия'
-        category: 'Категория'
-        level: 'Уровень'
-        amount: 'Количество пройденных тестов'
-        all: 'Пройти все тесты'
-        attempts: 'Попыток'
-        not_set: 'Не задано'
-      create:
-        header: 'Новое условие для получения бэйджа'
+      edit:
+        header: 'Изменить бэйдж'
 
   services:
     gist_question_service:

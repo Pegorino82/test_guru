@@ -3,16 +3,18 @@
     <%= badge.title %>
   </td>
   <td class="align-middle">
-    <img src="<%= badge.path %>" alt="<%= badge.title %>"
-         class="img-fluid mx-auto"
-         style="width: 25px;height: 25px;">
+    <%= render partial: 'shared/badge_image', locals: { path: badge.path, title: badge.title } %>
   </td>
   <td class="align-middle">
-    <%= badge.rule %>
+    <%= badge.rule %> <%= badge.rule_value %>
   </td>
-  <td>edit</td>
-  <td><%= link_to t('admin.badges.index.destroy'),
+  <td>
+    <%= link_to t('admin.badges.index.edit'), edit_admin_badge_path(badge) %>
+  </td>
+  <td>
+    <%= link_to t('admin.badges.index.destroy'),
                   admin_badge_path(badge),
                   method: :delete,
-                  data: { confirm: 'Delete?' } %></td>
+                  data: { confirm: 'Delete?' } %>
+  </td>
 </tr>

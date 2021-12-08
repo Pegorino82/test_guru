@@ -9,8 +9,9 @@
   <p>
     <%= form.label :path %>
     <%= form.text_field :path %>
+    <%= render partial: 'shared/badge_image', locals: { path: @badge.path, title: @badge.title } %>
   </p>
-  <p>
+  <p class="float-left">
     <%= form.label :rule %>
     <%= form.select :rule, rules_collection, prompt: true %>
   </p>

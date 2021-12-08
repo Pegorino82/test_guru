@@ -25,6 +25,6 @@ class ResultsController < ApplicationController
   end
 
   def win_badges_flash(badges)
-    flash[:notice] = "#{t('results.result.badge_win')}: #{badges.join(',')}!" unless badges.count.zero?
+    flash[:success] = "#{t('results.result.badge_win')}: #{badges.join(',')}!" unless badges.count.zero?
   end
 end

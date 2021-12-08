@@ -41,20 +41,17 @@ tests.each do |test|
   Answer.create!(body: 'Answer 2', correct: false, question: questions.last)
 end
 
-badge_rules = BadgeRule.create!([
-                                  { title: 'All of Category 1', category: categories.first, all: true },
-                                  { title: 'First try', attempts: 1 },
-                                  { title: 'All easy', level: 'easy', all: true }
-                                ])
-
 badges = Badge.create!([
                          { title: 'All Category 1',
                            path: 'https://cdn-icons-png.flaticon.com/512/1378/1378577.png',
-                           badge_rule: badge_rules.first },
-                         { title: 'First try',
-                           path: 'https://cdn-icons.flaticon.com/png/512/969/premium/969088.png?token=exp=1638693544~hmac=9f825ab266a1dee7aa52e902139bbc40',
-                           badge_rule: badge_rules[1] },
+                           rule: 0,
+                           rule_value: 1 },
                          { title: 'All easy',
-                           path: 'https://as2.ftcdn.net/v2/jpg/01/34/21/13/1000_F_134211392_WKylsNTSNxzTTK3kNVWxaHrrg1QOYLQv.jpg',
-                           badge_rule: badge_rules.last },
+                           path: 'https://cdn-icons-png.flaticon.com/512/744/744935.png',
+                           rule: 1,
+                           rule_value: 'easy' },
+                         { title: 'On first try',
+                           path: 'https://cdn-icons-png.flaticon.com/512/744/744984.png',
+                           rule: 2,
+                           rule_value: '' },
                        ])

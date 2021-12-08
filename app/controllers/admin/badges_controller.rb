@@ -2,7 +2,7 @@
 
 module Admin
   class BadgesController < Admin::BaseController
-    before_action :find_badge, only: %i[update destroy]
+    before_action :find_badge, only: %i[edit update destroy]
     before_action :find_categories, only: %i[new create]
     before_action :find_levels, only: %i[new create]
     before_action :dataset, only: %i[new create]

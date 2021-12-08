@@ -11,32 +11,28 @@ class UserBadgeService
 
   def gain_badges
     Badge.all.select do |badge|
-
-      if badge_for_on_first_try
-        return @user.badges.push(badge)
-      elsif badge_for_category(badge.rule_value)
-        return @user.badges.push(badge)
-      elsif badge_for_level(badge.rule_value)
-        return @user.badges.push(badge)
-      end
+      @user.badges.push(badge) if send(badge.rule.to_sym, badge)
     end
   end
 
   private
 
-  def badge_for_category(category_id)
-    tests = Test.where(category_id: category_id)
+  def all_by_category(badge)
+    return false if badge.rule != 'all_by_category'
+    tests = Test.where(category_id: badge.rule_value)
     passed_tests = @passed_tests.where(test: tests)
     tests.count.zero? ? false : passed_tests.count % tests.count == 0
   end
 
-  def badge_for_level(level)
-    tests = Test.where(level: level_by_name(level))
+  def all_by_level(badge)
+    return false if badge.rule != 'all_by_level'
+    tests = Test.where(level: level_by_name(badge.rule_value))
     passed_tests = @passed_tests.where(test: tests)
     tests.count.zero? ? false : passed_tests.count % tests.count == 0
   end
 
-  def badge_for_on_first_try
+  def on_first_try(badge)
+    return false if badge.rule != 'on_first_try'
     @result.passed? && Result.where(test: @test).count == 1
   end
 
