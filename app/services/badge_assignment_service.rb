@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UserBadgeService
+class BadgeAssignmentService
   def initialize(result)
     @result = result
     @user = @result.user

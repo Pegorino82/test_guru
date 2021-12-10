@@ -10,8 +10,8 @@ class ResultsController < ApplicationController
   def update
     @result.accept!(params[:answer_ids])
     if @result.completed?
-      badges = UserBadgeService.new(@result).gain_badges
-      win_badges_flash(badges.map {|b| b.title})
+      badges = BadgeAssignmentService.new(@result).gain_badges
+      win_badges_flash(badges.pluck(:title)) unless badges.nil?
       redirect_to result_result_path(@result)
     else
       render :show

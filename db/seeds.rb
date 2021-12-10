@@ -41,7 +41,7 @@ tests.each do |test|
   Answer.create!(body: 'Answer 2', correct: false, question: questions.last)
 end
 
-badges = Badge.create!([
+Badge.create!([
                          { title: 'All Category 1',
                            path: 'https://cdn-icons-png.flaticon.com/512/1378/1378577.png',
                            rule: 0,
