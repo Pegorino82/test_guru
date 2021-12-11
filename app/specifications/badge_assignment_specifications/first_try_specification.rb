@@ -5,7 +5,7 @@ module BadgeAssignmentSpecifications
     def win?
       return false if @badge.rule != 'on_first_try'
 
-      @result.passed? && Result.where(test: @result.test).count == 1
+      @result.passed? && Result.where(user: @result.user, test: @result.test).count == 1
     end
   end
 end
