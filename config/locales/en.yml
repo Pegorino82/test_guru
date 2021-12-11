@@ -13,6 +13,7 @@ en:
     logout: 'Log out'
     admin: 'Admin'
     feedback: 'Feedback'
+    badges: 'Badges'
 
   helpers:
     submit:
@@ -59,6 +60,7 @@ en:
       success: 'You passed test'
       failed: 'You failed test'
       percentage: 'Success percentage %{percentage}%'
+      badge_win: 'You win'
     gist:
       success_html: <a href=%{link} target=_blank>Gist created</a>
       failure: 'Gist failed'
@@ -69,9 +71,17 @@ en:
     create:
       success: '%{user}, your feedback sent'
 
+  badges:
+    index:
+      header: 'Badges'
+      title: 'Title'
+      path: 'Image'
+
   admin:
     admin-nav:
       creeting: 'Admin | Welcome %{name}!'
+      gists: 'Gists'
+      badges: 'Badges'
       logout: 'Log out'
     tests:
       new:
@@ -124,6 +134,20 @@ en:
         gist_url: 'Link'
         author: 'Author'
         delete: 'Delete'
+    badges:
+      index:
+        header: 'Badges'
+        create: 'Create badge'
+        create_rule: 'Create rule'
+        title: 'Title'
+        path: 'Badge path'
+        rule: 'Rule'
+        destroy: 'Delete'
+        edit: 'Edit'
+      create:
+        header: 'New badge'
+      edit:
+        header: 'Edit badge'
 
   services:
     gist_question_service:

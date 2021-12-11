@@ -1,0 +1,23 @@
+<%= form_with model: [:admin, @badge],
+              data: { rules: @rules },
+              id: "badge-table" do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :path %>
+    <%= form.text_field :path %>
+    <%= render partial: 'shared/badge_image', locals: { path: @badge.path, title: @badge.title } %>
+  </p>
+  <p class="float-left">
+    <%= form.label :rule %>
+    <%= form.select :rule, rules_collection, prompt: true %>
+  </p>
+  <p class="hide" id="rule-value">
+    <%= form.label :rule_value %>
+    <%= form.select :rule_value, [], prompt: true %>
+  </p>
+  <p><%= form.submit %></p>
+<% end %>

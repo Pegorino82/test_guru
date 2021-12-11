@@ -12,6 +12,7 @@ import '../utilities/sorting'
 import '../utilities/password_confirmation'
 import '../utilities/test_progress'
 import '../utilities/form_inline'
+import '../utilities/form_badge'
 
 Rails.start()
 Turbolinks.start()

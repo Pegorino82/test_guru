@@ -22,14 +22,14 @@ categories = Category.create!([
 
 tests = Test.create!([
                        { title: 'Test 1', level: 0, category: categories.first, author: users.first },
-                       { title: 'Test 2', level: 1, category: categories[1], author: users[1] },
-                       { title: 'Test 3', level: 2, category: categories.last, author: users.last },
+                       { title: 'Test 2', level: 3, category: categories[1], author: users[1] },
+                       { title: 'Test 3', level: 5, category: categories.last, author: users.last },
                        { title: 'Test 4', level: 0, category: categories.first, author: users.first },
-                       { title: 'Test 5', level: 1, category: categories[1], author: users[1] },
-                       { title: 'Test 6', level: 2, category: categories.last, author: users.last },
+                       { title: 'Test 5', level: 3, category: categories[1], author: users[1] },
+                       { title: 'Test 6', level: 5, category: categories.last, author: users.last },
                        { title: 'Test 7', level: 0, category: categories.first, author: users.first },
-                       { title: 'Test 8', level: 1, category: categories[1], author: users[1] },
-                       { title: 'Test 9', level: 2, category: categories.last, author: users.last }
+                       { title: 'Test 8', level: 3, category: categories[1], author: users[1] },
+                       { title: 'Test 9', level: 5, category: categories.last, author: users.last }
                      ])
 
 tests.each do |test|
@@ -37,6 +37,21 @@ tests.each do |test|
                                  { body: 'Question 1', test: test },
                                  { body: 'Question 2', test: test }
                                ])
-  Answer.create!(body: 'Answer 1', correct: [false, true].sample, question: questions.first)
-  Answer.create!(body: 'Answer 2', correct: [false, true].sample, question: questions.last)
+  Answer.create!(body: 'Answer 1 (correct)', correct: true, question: questions.first)
+  Answer.create!(body: 'Answer 2', correct: false, question: questions.last)
 end
+
+Badge.create!([
+                         { title: 'All Category 1',
+                           path: 'https://cdn-icons-png.flaticon.com/512/1378/1378577.png',
+                           rule: 0,
+                           rule_value: 1 },
+                         { title: 'All easy',
+                           path: 'https://cdn-icons-png.flaticon.com/512/744/744935.png',
+                           rule: 1,
+                           rule_value: 'easy' },
+                         { title: 'On first try',
+                           path: 'https://cdn-icons-png.flaticon.com/512/744/744984.png',
+                           rule: 2,
+                           rule_value: '' },
+                       ])
