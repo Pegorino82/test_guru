@@ -10,13 +10,15 @@ class Result < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_save :set_result
 
-  scope :passed, -> { where('result >= ?', SUCCESS_SCORE )}
+  scope :passed, -> { where('result >= ?', SUCCESS_SCORE) }
 
   def completed?
     current_question.nil?
   end
 
   def accept!(answer_ids)
+    return if time_out?
+
     self.score += 1 if correct_answer?(answer_ids)
 
     self.current_question = next_question
@@ -33,6 +35,23 @@ class Result < ApplicationRecord
 
   def current_question_num
     test.questions.order(:id).where('id <= ?', current_question.id).size
+  end
+
+  def time_out?
+    return false unless timer_set?
+
+    Time.current - created_at > test.timer.minutes
+  end
+
+  def left_time
+    return 0 unless timer_set?
+
+    left_t = (created_at + test.timer.minutes) - Time.current
+    left_t.positive? ? left_t.to_i : 0
+  end
+
+  def timer_set?
+    !test.timer.nil?
   end
 
   private
