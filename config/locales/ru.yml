@@ -5,6 +5,7 @@ ru:
     delete: 'Удалить'
     tests: 'К тестам'
     cancel: 'Отмена'
+    not_set: 'Не задано'
 
   header-nav:
     creeting: 'Привет%{name}!'
@@ -102,6 +103,7 @@ ru:
         create: 'Создать'
         title: 'Название'
         level: 'Уровень'
+        timer: 'Время'
         questions: 'Вопросы'
     questions:
       new:

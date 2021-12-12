@@ -5,6 +5,7 @@ en:
     delete: 'Delete'
     tests: 'To tests'
     cancel: 'Cancel'
+    not_set: 'Not set'
 
   header-nav:
     creeting: 'Hello%{name}!'
@@ -100,6 +101,7 @@ en:
         create: 'Create'
         title: 'Title'
         level: 'Level'
+        timer: 'Timer'
         questions: 'Questions'
     questions:
       new:
