@@ -6,6 +6,8 @@
            total: @result.test.questions.size,
            current: @result.current_question_num %>
 
+<%= render 'shared/timer', total: @result.left_time %>
+
 <p>
   <%= @result.current_question.body %>
 </p>

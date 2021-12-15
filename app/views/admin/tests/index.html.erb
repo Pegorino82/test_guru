@@ -5,7 +5,7 @@
 <%= render'shared/errors', resource: @test %>
 
 <table class="table">
-  <thead style="text-align: center;">
+  <thead class="align-middle">
     <tr>
       <th class="sort_by_title pointer">
         <%= t('.title') %>
@@ -13,6 +13,7 @@
         <%= octicon 'arrow-down', class: 'text-success hide' %>
       </th>
       <th><%= t('.level') %></th>
+      <th><%= t('.timer') %></th>
       <th><%= t('.questions') %></th>
     </tr>
   </thead>

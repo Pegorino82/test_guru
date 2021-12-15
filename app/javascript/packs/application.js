@@ -13,6 +13,7 @@ import '../utilities/password_confirmation'
 import '../utilities/test_progress'
 import '../utilities/form_inline'
 import '../utilities/form_badge'
+import '../utilities/timer'
 
 Rails.start()
 Turbolinks.start()

@@ -9,6 +9,7 @@
                 class: "form-inline-link" %>
   </td>
   <td class="align-middle"><%= test_level(test) %></td>
+  <td class="align-middle"><%= test.timer || t('common.not_set') %></td>
   <td class="align-middle">
     <% test.questions.map do |question| %>
       <%= link_to question.body, admin_question_path(question) %> |

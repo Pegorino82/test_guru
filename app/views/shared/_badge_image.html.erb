@@ -1,4 +1,7 @@
-<%= image_tag(path || '',
+<%= image_tag(path,
               size: "25x25",
               id: 'badge-image',
-              class: "img-fluid mx-auto #{'hide' if path.nil?}") %>
+              class: "img-fluid mx-auto#{' hide' if path.nil?}") rescue image_tag('default_badge.png',
+                                                                                  { size: "25x25",
+                                                                                    id: 'badge-image',
+                                                                                    class: "img-fluid mx-auto#{' hide' if path.nil?}" }) %>
