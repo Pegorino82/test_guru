@@ -17,7 +17,10 @@ class Result < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    return if time_out?
+    if time_out?
+      self.current_question = nil
+      return
+    end
 
     self.score += 1 if correct_answer?(answer_ids)
 

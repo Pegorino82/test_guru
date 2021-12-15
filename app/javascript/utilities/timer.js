@@ -14,7 +14,7 @@ const startTimer = () => {
         }
         let leftTime = timeStringToInt(timer.innerText)
         if ( leftTime <= 0) {
-            return window.location.href = window.location.origin + timer.dataset.redirect
+            return document.querySelector('input[type="submit"]').click()
         }
         leftTime -= 1
         timer.innerText = intToTimeString(leftTime)
@@ -24,7 +24,7 @@ const startTimer = () => {
 
 const intToTimeString = (value) => {
     const twoDigits = (digit) => {
-        return digit / 10 > 1 ? digit : '0' + digit
+        return digit / 10 >= 1 ? digit : '0' + digit
     }
     if (value < 60) {
         return `00:${twoDigits(value)}`
